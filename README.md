@@ -26,8 +26,6 @@ add package into your pubspec.yml file
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
 
 ```dart
 class ExampleApp extends StatelessWidget {
