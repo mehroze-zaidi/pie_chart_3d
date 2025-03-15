@@ -63,5 +63,7 @@ class ExampleApp extends StatelessWidget {
 
 ## Additional information
 
+If you found any error, open ticket on Github.
+
 Please feel free to start Contribution. It still needs lot of features.
 
