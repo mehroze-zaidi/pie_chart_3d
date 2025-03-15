@@ -11,17 +11,18 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This package draws 3d Pie Chart using Custom Painter 
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+ - Supports 3d view of Pie Chart
+ - Adjustable dept of the Pie Chart 
+
+![plot](/Users/mehrozezaid/pie_chart_3d/simulator_screenshot.png)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+add package into your pubspec.yml file
 
 ## Usage
 
@@ -29,11 +30,40 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
-const like = 'sample';
+class ExampleApp extends StatelessWidget {
+  const ExampleApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ThreeDPieChart(
+          data: _getChartData(),
+          options: PieChartOptions(
+            height: 400,
+            width: 400,
+            depthDarkness: 0.9,
+            ellipseRatio: 0.4,
+            shadowHeight: 50,
+          ),
+        ),
+      ),
+    );
+  }
+
+  List<ChartData> _getChartData() {
+    return [
+      ChartData(category: 'Music', value: 80, color: Color(0xFF6366F1)),
+      ChartData(category: 'Sport', value: 50, color: Color(0xFFEF4444)),
+      ChartData(category: 'School', value: 50, color: Color(0xFFFACC15)),
+      ChartData(category: 'ART', value: 15, color: Color(0xFFC115FA)),
+      ChartData(category: 'FOOD', value: 20, color: Color(0xFF56B533)),
+    ];
+  }
+}
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Please feel free to start Contribution. It still needs lot of features.
+
