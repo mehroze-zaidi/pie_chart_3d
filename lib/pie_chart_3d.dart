@@ -6,14 +6,13 @@ class ChartData {
   final String category;
   final double value;
   final Color color;
-  final String? label;
   final TextStyle? textStyle;
 
   ChartData({
     required this.category,
     required this.value,
     required this.color,
-    this.label,
+
     this.textStyle,
   });
 }
@@ -79,7 +78,7 @@ class ThreeDPieChartPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
     final radius = min(size.width, size.height) * options.radius;
-    final depthOffset = options.shadowHeight ?? 8.0;
+    final depthOffset = options.shadowHeight ;
     final double total = chartData.fold(0.0, (sum, item) => sum + item.value);
     double currentAngle = -pi / 2;
 
@@ -92,17 +91,17 @@ class ThreeDPieChartPainter extends CustomPainter {
       final topArcRect = Rect.fromCenter(
         center: center,
         width: radius * 2,
-        height: radius * 2 * options.ellipseRatio!,
+        height: radius * 2 * options.ellipseRatio,
       );
       final bottomArcRect = Rect.fromCenter(
         center: Offset(center.dx, center.dy + depthOffset),
         width: radius * 2,
-        height: radius * 2 * options.ellipseRatio!,
+        height: radius * 2 * options.ellipseRatio,
       );
 
       final depthPaint = Paint()
         ..style = PaintingStyle.fill
-        ..color = darkenColor(data.color, options.depthDarkness ?? 0.2);
+        ..color = darkenColor(data.color, options.depthDarkness);
 
       final path = Path();
 
@@ -122,7 +121,7 @@ class ThreeDPieChartPainter extends CustomPainter {
           center,
           radius,
           depthOffset,
-          options.ellipseRatio!,
+          options.ellipseRatio,
         );
       } else if (includesZero) {
 
@@ -137,7 +136,7 @@ class ThreeDPieChartPainter extends CustomPainter {
           center,
           radius,
           depthOffset,
-          options.ellipseRatio!,
+          options.ellipseRatio,
         );
       } else {
         // Draw curved depth side for other slices
@@ -178,7 +177,7 @@ class ThreeDPieChartPainter extends CustomPainter {
         Rect.fromCenter(
           center: center,
           width: radius * 2,
-          height: radius * 2 * options.ellipseRatio!,
+          height: radius * 2 * options.ellipseRatio,
         ),
         currentAngle,
         sweepAngle,
@@ -187,8 +186,8 @@ class ThreeDPieChartPainter extends CustomPainter {
       );
 
       // Draw labels
-      if (options.showLabels && (data.label != null || data.category != null)) {
-        final labelText = data.label ?? data.category!;
+      if (options.showLabels) {
+        final labelText = data.category;
         final textStyle = data.textStyle ?? options.defaultTextStyle;
         final textPainter = TextPainter(
           text: TextSpan(text: labelText, style: textStyle),
@@ -198,7 +197,7 @@ class ThreeDPieChartPainter extends CustomPainter {
         final labelRadius = radius * 0.6;
         final x = center.dx + labelRadius * cos(midAngle);
         final y =
-            center.dy + (labelRadius * options.ellipseRatio!) * sin(midAngle);
+            center.dy + (labelRadius * options.ellipseRatio) * sin(midAngle);
         final offset = Offset(
           x - textPainter.width / 2,
           y - textPainter.height / 2,
