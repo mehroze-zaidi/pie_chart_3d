@@ -18,7 +18,8 @@ This package draws 3d Pie Chart using Custom Painter
  - Supports 3d view of Pie Chart
  - Adjustable dept of the Pie Chart 
 
-![screenshot](simulator_screenshot.png)
+<img src="https://raw.githubusercontent.com/mehroze-zaidi/pie_chart_3d/main/simulator_screenshot.png" width="350">
+
 
 ## Getting started
 
