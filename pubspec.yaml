@@ -1,7 +1,8 @@
 name: pie_chart_3d
 description: "Flutter 3d pie chart"
 version: 0.0.1
-homepage:
+repository: https://github.com/mehroze-zaidi/pie_chart_3d.git
+homepage: https://github.com/mehroze-zaidi/pie_chart_3d.git
 
 environment:
   sdk: ^3.7.0
