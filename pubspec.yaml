@@ -1,5 +1,10 @@
 name: pie_chart_3d
-description: "Flutter 3d pie chart"
+description: "
+  A lightweight and customizable 3D Pie Chart package for Flutter, built with performance and visual clarity in mind. 
+  Designed to deliver intuitive data visualization through dynamic 3D rendering, this package allows developers to easily 
+  integrate interactive, animated pie charts with depth and realism. Ideal for dashboards, reports, and any data-driven 
+  UI. Built with clean architecture and extensibility, suitable for both production apps and experimentation.
+"
 version:  0.0.6
 repository: https://github.com/mehroze-zaidi/pie_chart_3d.git
 homepage: https://github.com/mehroze-zaidi/pie_chart_3d.git
