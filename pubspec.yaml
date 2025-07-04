@@ -5,7 +5,7 @@ description: "
   integrate interactive, animated pie charts with depth and realism. Ideal for dashboards, reports, and any data-driven 
   UI. Built with clean architecture and extensibility, suitable for both production apps and experimentation.
 "
-version:  0.0.6
+version:  0.0.7
 repository: https://github.com/mehroze-zaidi/pie_chart_3d.git
 homepage: https://github.com/mehroze-zaidi/pie_chart_3d.git
 
